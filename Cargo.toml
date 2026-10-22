@@ -1,0 +1,29 @@
+[workspace]
+members = [
+    "crates/arxml-core",
+    "crates/arxml-model-r4-0",
+    "crates/arxml",
+    "tools/xsdgen",
+    "tools/arxml-index",
+    "tools/arxml-cli",
+]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+publish = false
+
+[workspace.dependencies]
+arxml-core = { path = "crates/arxml-core" }
+arxml-model-r4-0 = { path = "crates/arxml-model-r4-0" }
+
+# Only the runtime support crate is needed by the generated model code.
+# `xsd-parser` itself is a build-time dependency of `tools/xsdgen` only.
+xsd-parser = { git = "https://github.com/Bergmann89/xsd-parser", rev = "96299a06" }
+xsd-parser-types = { git = "https://github.com/Bergmann89/xsd-parser", rev = "96299a06", features = [
+    "quick-xml",
+] }
+quick-xml = "0.41"
+regex = "1"

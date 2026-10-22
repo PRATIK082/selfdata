@@ -1,0 +1,20 @@
+[package]
+name = "arxml"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+description = "Version aware ARXML facade: read / write / validate AUTOSAR documents"
+
+[features]
+default = ["r4-0"]
+# Support for AUTOSAR R4.0 (AUTOSAR_00047.xsd).
+r4-0 = ["dep:arxml-model-r4-0"]
+
+[dependencies]
+arxml-core.workspace = true
+arxml-model-r4-0 = { workspace = true, optional = true }
+
+[[example]]
+name = "read_write_validate"
+required-features = ["r4-0"]

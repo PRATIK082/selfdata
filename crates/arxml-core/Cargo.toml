@@ -1,0 +1,11 @@
+[package]
+name = "arxml-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+description = "Runtime support (read / write / validate) for ARXML documents built on xsd-parser-types"
+
+[dependencies]
+xsd-parser-types.workspace = true
+quick-xml.workspace = true

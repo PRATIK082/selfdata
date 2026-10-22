@@ -1,0 +1,12 @@
+[package]
+name = "xsdgen"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+anyhow = "1"
+quote = "1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+xsd-parser.workspace = true
+xsd-parser-types.workspace = true

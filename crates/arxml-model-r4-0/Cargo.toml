@@ -1,0 +1,18 @@
+[package]
+name = "arxml-model-r4-0"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+description = "Generated AUTOSAR R4.0 model (AUTOSAR_00047.xsd) with read / write / validate helpers"
+
+[features]
+default = ["generated"]
+# The generated code is huge (100+ MB of Rust); disable this feature to build
+# the crate without it (e.g. for documentation or CI linting of the facade).
+generated = []
+
+[dependencies]
+arxml-core.workspace = true
+xsd-parser-types.workspace = true
+regex.workspace = true

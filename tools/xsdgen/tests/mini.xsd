@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:AR="http://autosar.org/schema/r4.0"
+            targetNamespace="http://autosar.org/schema/r4.0"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+
+  <xsd:simpleType name="IDENTIFIER">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="128"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:complexType name="MEMORY-SECTION">
+    <xsd:sequence>
+      <xsd:element name="SHORT-NAME" type="AR:IDENTIFIER"/>
+      <xsd:element name="VALUE" type="xsd:boolean" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:simpleType name="MEMORY-SECTION-TYPE">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="A"/>
+      <xsd:enumeration value="B"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:complexType name="BOOLEAN">
+    <xsd:sequence>
+      <xsd:element name="SHORT-NAME" type="AR:IDENTIFIER"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="AR-PACKAGE">
+    <xsd:sequence>
+      <xsd:element name="MEMORY-SECTION" type="AR:MEMORY-SECTION" minOccurs="0" maxOccurs="unbounded"/>
+      <xsd:element name="TYPE-REF" type="AR:MEMORY-SECTION-TYPE" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:element name="AR-PACKAGE" type="AR:AR-PACKAGE"/>
+</xsd:schema>

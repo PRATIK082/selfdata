@@ -1,0 +1,22 @@
+# Build output
+target/
+**/target/
+
+# Generated model (134 MB, reproduced by ./generate.ps1 -> tools/xsdgen)
+crates/arxml-model-r4-0/src/generated.rs
+
+# Generated index / scratch output
+model-index.json
+*.arxml.out
+sample.out.arxml
+generic-edit.arxml
+
+# Logs
+*.log
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
