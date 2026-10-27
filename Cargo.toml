@@ -6,6 +6,7 @@ members = [
     "tools/xsdgen",
     "tools/arxml-index",
     "tools/arxml-cli",
+    "tools/xsd-api-gen",
 ]
 resolver = "2"
 

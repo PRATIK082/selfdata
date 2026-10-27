@@ -843,6 +843,10 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3ad82d2a33cdc9674dc7465672f271e096168fcdbe0f799d9e6db8c5892679dc"
 
 [[package]]
+name = "xsd-api-gen"
+version = "0.1.0"
+
+[[package]]
 name = "xsd-parser"
 version = "1.5.2"
 source = "git+https://github.com/Bergmann89/xsd-parser?rev=96299a06#96299a06eb207b420c3ce03b6d07c41421f555b0"

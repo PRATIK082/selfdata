@@ -4,6 +4,8 @@ target/
 
 # Generated model (134 MB, reproduced by ./generate.ps1 -> tools/xsdgen)
 crates/arxml-model-r4-0/src/generated.rs
+# Generated draft per-element API (reproduced by tools/xsd-api-gen)
+crates/arxml-model-r4-0/src/element_api.rs
 
 # Generated index / scratch output
 model-index.json

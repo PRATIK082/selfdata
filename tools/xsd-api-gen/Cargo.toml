@@ -1,0 +1,14 @@
+[package]
+name = "xsd-api-gen"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+description = "Draft generator: XSD elements -> Rust API stubs (one per Autosar element)"
+
+[[bin]]
+name = "xsd-api-gen"
+path = "src/main.rs"
+
+[dependencies]
+# Intentionally dependency-free so this tool stays cheap to build.
