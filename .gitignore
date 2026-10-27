@@ -7,6 +7,9 @@ crates/arxml-model-r4-0/src/generated.rs
 # Generated draft per-element API (reproduced by tools/xsd-api-gen)
 crates/arxml-model-r4-0/src/element_api.rs
 
+# Local-only docs (not required in repo)
+docs/tooling-alternatives.md
+
 # Generated index / scratch output
 model-index.json
 *.arxml.out
