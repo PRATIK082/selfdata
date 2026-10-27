@@ -1,0 +1,15 @@
+[autosar]
+schema = "R4.0"
+system_name = "VehicleSystem"
+
+[[autosar.ecus]]
+name = "ECU_EngineController"
+type = "ApplicationECU"
+
+[[autosar.ecus]]
+name = "ECU_BrakeController"
+type = "ApplicationECU"
+
+[[autosar.components]]
+name = "Swc_EngineControl"
+type = "ApplicationSwComponentType"

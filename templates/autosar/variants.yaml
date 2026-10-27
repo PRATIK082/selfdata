@@ -1,0 +1,13 @@
+variants:
+  - name: Variant_Base
+    description: Base vehicle configuration
+    ecus: [ECU_EngineController, ECU_BrakeController, ECU_Gateway]
+    features: [BaseEngine, AbsBrakes]
+  - name: Variant_Performance
+    description: Performance vehicle configuration
+    ecus: [ECU_EngineController, ECU_BrakeController, ECU_Gateway, ECU_TurboController]
+    features: [TurboEngine, AbsBrakes, TractionControl]
+  - name: Variant_EV
+    description: Electric vehicle configuration
+    ecus: [ECU_MotorController, ECU_BrakeController, ECU_Gateway, ECU_BatteryController]
+    features: [ElectricDrive, RegenBraking, AbsBrakes]

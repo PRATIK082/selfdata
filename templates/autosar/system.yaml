@@ -1,0 +1,46 @@
+autosar:
+  schema: R4.0
+  system_name: VehicleSystem
+
+  ecus:
+    - name: ECU_EngineController
+      type: ApplicationECU
+      components: [Swc_EngineControl]
+    - name: ECU_BrakeController
+      type: ApplicationECU
+      components: [Swc_BrakeControl]
+    - name: ECU_Gateway
+      type: CommunicationECU
+      components: [Swc_Gateway]
+
+  port_interfaces:
+    - name: If_EngineRpm
+      type: SenderReceiverInterface
+      data_elements:
+        - name: Rpm
+          type: uint16
+          min: 0
+          max: 8000
+
+  components:
+    - name: Swc_EngineControl
+      type: ApplicationSwComponentType
+      ports:
+        - name: RpmOut
+          direction: provided
+          interface: If_EngineRpm
+    - name: Swc_Dashboard
+      type: ApplicationSwComponentType
+      ports:
+        - name: RpmIn
+          direction: required
+          interface: If_EngineRpm
+
+  connections:
+    - from: Swc_EngineControl.RpmOut
+      to: Swc_Dashboard.RpmIn
+      medium: CAN_Powertrain
+
+  modes:
+    - name: EngineMode
+      values: [Off, Cranking, Running, Shutdown]

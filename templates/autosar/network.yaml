@@ -1,0 +1,34 @@
+network:
+  clusters:
+    - name: CAN_Powertrain
+      protocol: CAN
+      baudrate: 500000
+      channel: CAN0
+      frames:
+        - name: EngineStatusFrame
+          id: 0x123
+          dlc: 8
+          cycle_time_ms: 10
+          pdus:
+            - name: EngineStatusPdu
+              length: 8
+              signals:
+                - name: EngineRpm
+                  start_bit: 0
+                  length: 16
+                  factor: 0.25
+                  offset: 0
+                  unit: rpm
+                - name: EngineTemp
+                  start_bit: 16
+                  length: 8
+                  factor: 1
+                  offset: -40
+                  unit: celsius
+    - name: ETH_Backbone
+      protocol: Ethernet
+      speed_mbps: 100
+      frames:
+        - name: CameraFrame
+          vlan: 10
+          priority: 7

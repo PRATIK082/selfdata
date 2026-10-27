@@ -1,0 +1,17 @@
+requirements:
+  - id: REQ_001
+    title: Engine RPM shall be reported to the dashboard within 20 ms
+    priority: high
+    links:
+      - type: implemented_by
+        target: Swc_EngineControl.RpmOut
+      - type: verified_by
+        target: TC_001
+  - id: REQ_002
+    title: Brake torque request shall be validated before application
+    priority: high
+    links:
+      - type: implemented_by
+        target: Swc_BrakeControl.TorqueRequest
+      - type: verified_by
+        target: TC_002

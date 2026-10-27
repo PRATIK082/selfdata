@@ -1,0 +1,20 @@
+application:
+  components:
+    - name: Swc_EngineControl
+      runnables:
+        - name: Runnable_Init
+          trigger: Init
+        - name: Runnable_10ms
+          trigger: TimingEvent
+          period_ms: 10
+          data_access:
+            - port: RpmOut
+              access: write
+        - name: Runnable_Shutdown
+          trigger: Shutdown
+      internal_behavior:
+        events:
+          - name: TimingEvent_10ms
+            type: TimingEvent
+            period_ms: 10
+        runnables: [Runnable_Init, Runnable_10ms, Runnable_Shutdown]

@@ -1,0 +1,19 @@
+{
+  "autosar": {
+    "schema": "R4.0",
+    "system_name": "VehicleSystem",
+    "ecus": [
+      { "name": "ECU_EngineController", "type": "ApplicationECU" },
+      { "name": "ECU_BrakeController", "type": "ApplicationECU" }
+    ],
+    "components": [
+      {
+        "name": "Swc_EngineControl",
+        "type": "ApplicationSwComponentType",
+        "ports": [
+          { "name": "RpmOut", "direction": "provided", "interface": "If_EngineRpm" }
+        ]
+      }
+    ]
+  }
+}

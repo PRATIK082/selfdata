@@ -1,0 +1,15 @@
+tests:
+  - id: TC_001
+    name: EngineRpmPropagation
+    requirement: REQ_001
+    scenario:
+      - step: set Swc_EngineControl.RpmOut to 3000
+      - step: run Runnable_10ms
+      - expect: Swc_Dashboard.RpmIn equals 3000 within 20 ms
+  - id: TC_002
+    name: BrakeTorqueValidation
+    requirement: REQ_002
+    scenario:
+      - step: send invalid torque request
+      - step: run Runnable_10ms
+      - expect: request rejected and fault logged
