@@ -1,0 +1,1 @@
+# S-core (safety core) support (planned)
